@@ -137,9 +137,19 @@ export const DisruptionSimulator: React.FC<DisruptionSimulatorProps> = ({
               className="btn btn-danger"
               onClick={onTriggerLiveDefense}
               disabled={loading}
-              style={{ padding: '0.55rem 1.1rem', fontSize: '0.85rem', fontWeight: 700, borderRadius: '0.4rem', boxShadow: '0 2px 10px rgba(244,63,94,0.4)', cursor: loading ? 'not-allowed' : 'pointer' }}
+              style={{
+                padding: '0.55rem 1.1rem',
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                borderRadius: '0.4rem',
+                boxShadow: '0 2px 10px rgba(244,63,94,0.4)',
+                cursor: loading ? 'not-allowed' : 'pointer',
+                opacity: loading ? 0.8 : 1,
+                minWidth: '230px',
+              }}
             >
-              <Play size={15} /> <span>EXECUTE LIVE DEFENSE SCENARIO</span>
+              <Play size={15} className={loading ? 'spin' : ''} />
+              <span>{loading ? 'Running v1 → v2 → v3 → v4…' : 'EXECUTE LIVE DEFENSE SCENARIO'}</span>
             </button>
           </div>
         </div>

@@ -32,6 +32,16 @@
   padding: 0;
 }
 
+/* Spin animation for loading states */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.spin {
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
 body {
   background-color: var(--bg-dark);
   color: var(--text-primary);

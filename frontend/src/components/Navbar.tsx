@@ -215,10 +215,19 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="btn btn-danger"
           onClick={onTriggerLiveDefense}
           disabled={loading}
-          style={{ padding: '0.45rem 0.85rem', fontSize: '0.8rem', fontWeight: 700, borderRadius: '0.375rem', cursor: loading ? 'not-allowed' : 'pointer' }}
-          title="Run the deterministic four-stage disruption scenario."
+          style={{
+            padding: '0.45rem 0.85rem',
+            fontSize: '0.8rem',
+            fontWeight: 700,
+            borderRadius: '0.375rem',
+            cursor: loading ? 'not-allowed' : 'pointer',
+            opacity: loading ? 0.8 : 1,
+            minWidth: '200px',
+          }}
+          title="Run the deterministic four-stage disruption scenario (v1 → v2 → v3 → v4)."
         >
-          <Zap size={14} /> <span>LIVE DEFENSE SCENARIO</span>
+          <Zap size={14} className={loading ? 'spin' : ''} />
+          <span>{loading ? 'Running 3-Step Replan…' : 'LIVE DEFENSE SCENARIO'}</span>
         </button>
 
         {/* Secondary CTA: Reset Demo */}
