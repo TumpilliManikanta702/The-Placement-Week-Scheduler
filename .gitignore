@@ -1,0 +1,29 @@
+# Environment configuration
+.env
+*.env
+
+# SQLite Database
+*.db
+*.sqlite
+placement_scheduler.db
+
+# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.pytest_cache/
+
+# Node & Frontend Build
+node_modules/
+dist/
+build/
+.ds_store
+
+# IDE and OS artifacts
+.vscode/
+.idea/
+*.log
+scratch/
