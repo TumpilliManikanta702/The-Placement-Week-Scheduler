@@ -63,8 +63,10 @@ export const ReplanDiffModal: React.FC<ReplanDiffModalProps> = ({ diff, notifica
         >
           <div>
             <div style={{ fontSize: '0.7rem', color: '#94a3b8', textTransform: 'uppercase', fontWeight: 700 }}>Preservation Rate</div>
-            <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#10b981' }}>94.8%</div>
-            <div style={{ fontSize: '0.65rem', color: '#64748b' }}>{summary.unchanged} / 1,099 preserved</div>
+            <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#10b981' }}>
+              {((summary.unchanged / (summary.previously_scheduled || 1)) * 100).toFixed(2)}%
+            </div>
+            <div style={{ fontSize: '0.65rem', color: '#64748b' }}>{summary.unchanged} / {summary.previously_scheduled || 1099} preserved</div>
           </div>
 
           <div>
@@ -82,7 +84,7 @@ export const ReplanDiffModal: React.FC<ReplanDiffModalProps> = ({ diff, notifica
           <div>
             <div style={{ fontSize: '0.7rem', color: '#94a3b8', textTransform: 'uppercase', fontWeight: 700 }}>Cancelled</div>
             <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#f43f5e' }}>{summary.cancelled}</div>
-            <div style={{ fontSize: '0.65rem', color: '#64748b' }}>57 prior slots changed</div>
+            <div style={{ fontSize: '0.65rem', color: '#64748b' }}>{summary.cancelled} prior slots changed</div>
           </div>
 
           <div>
@@ -102,7 +104,7 @@ export const ReplanDiffModal: React.FC<ReplanDiffModalProps> = ({ diff, notifica
             >
               {summary.replan_churn_pct}%
             </div>
-            <div style={{ fontSize: '0.65rem', color: '#64748b' }}>(0 Moved + 57 Cancelled) / 1099</div>
+            <div style={{ fontSize: '0.65rem', color: '#64748b' }}>({summary.moved} Moved + {summary.cancelled} Cancelled) / {summary.previously_scheduled || 1099}</div>
           </div>
         </div>
 

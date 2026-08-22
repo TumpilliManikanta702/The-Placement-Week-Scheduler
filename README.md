@@ -127,8 +127,8 @@ Run the complete Pytest backend test suite (verifying generator, CP-SAT solver m
 - **Final Schedule (v4)**:
   - Total Evaluated Interviews: 2,578
   - Previously Scheduled: 1,099
-  - Unchanged: 1,042 (**94.8% Preserved**)
-  - Cancelled: 57
-  - Newly Scheduled: 56
-  - Replan Churn Rate: **5.19%**
+  - Unchanged: 1,040 (**94.63% Preserved**)
+  - Cancelled: 59
+  - Newly Scheduled: 59
+  - Replan Churn Rate: **5.37%**
   - Validation Result: **VALID PASS (0 hard-constraint violations)**
